@@ -1,2 +1,2 @@
 # Quiz
-Quiz I built to practice JaavaScript.
+Quiz I built to practice JavaScript.
