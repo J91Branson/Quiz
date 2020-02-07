@@ -17,5 +17,30 @@ function submitAnswers() {
     var q10 = document.forms["quizForm"]["q10"].value;
 
 
-    alert(q1);
+    //Validation
+
+    for(i = 1; i <= total; i++){
+        if(eval('q'+i) == null || eval('q'+i) == ''){
+            alert("You didn't answer question question" + i);
+            return false;
+        }
+    }
+    
+    //Correct Answers
+
+    var answers = ["a","c","b","b","b","d","c","c","a","c"];
+
+    // Check answers
+    for(i=1; i <= total; i++){
+        if(eval('q'+i) == answers[i - 1]){
+            score++;
+        }
+    }
+    
+    //Dispaly Results
+     var results = document.getElementById('results')
+     results.innerHTML = '<h3> You scored <span>' + score + '</span> out of <span>' + total + '</span></h3>'
+    
+    // Prevents the form from trying to submit to a server
+    return false;
     }
